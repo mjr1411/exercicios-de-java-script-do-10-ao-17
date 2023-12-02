@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="Nome">Nome:</label>
+        <input name="nome" id="nome" type="text"> <br>
+        <label for="celular">Celular:</label>
+        <input name="celular" id="celular" type="text"> <br>
+        <button id="cadastro" onclick="cadastro();">Cadastrar</button>
+    </div> <br>
+    <div>
+        <h2>Nome       -     Celular</h2>
+        <div id="dados"></div>
+    </div>
+    <script>
+        function cadastro(){
+            const n = document.getElementById("nome").value;
+            const c = document.getElementById("celular").value;
+            const d = document.getElementById("dados");
+            dados.innerHTML = n + " - " + c;
+            document.getElementById("nome").value = "";
+            document.getElementById("cel").value = "";
+        }
+    </script>
+</body>
+</html>

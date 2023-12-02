@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 20px;">
+    <h2>Caucular media </h2>
+    <div style="padding: 10px;border:2px solid rgb(47, 248, 248); background-color:rgb(11, 143, 184); color: whitesmoke ">
+        <label for="1°nota" name="nota1">1°nota:</label>
+        <input id="n1" type="text" placeholder="0.0"> <br>
+        <label for="2°nota" name="nota2">2°nota:</label>
+        <input id="n2" type="text" placeholder="0.0"> <br>
+        <div>
+            <button onclick="calcular();">Caucular</button>
+            <button onclick="limpar();">Limpar</button>
+            <button onclick="aterarLayout();" class="btlayout">Modo Escuro</button>
+        </div>
+        <h3 class="result">media:</h3>
+    </div>
+    <script>
+        let modo = 0;
+        function aterarLayout(){
+            const minhaDiv = 
+            document.getElementsByTagName("div")[0].style;
+            const meuBotao = document.getElementsByTagName("button")[2].style;
+            if(modo==0){
+                backgroundColor = "black"; 
+                minhaDiv.backgroundColor = "black";
+                minhaDiv.color= "whitesmoke";
+                document.getElementsByTagName("button")[2].innerHTML = "Modo claro";
+                modo=1;
+            }else{
+                minhaDiv.padding = "10px";
+                minhaDiv.border = "2px solid rgb(47, 248, 248)";
+                minhaDiv.backgroundColor= "rgb(11, 143, 184)";
+                document.getElementsByTagName("button")[2].innerHTML = "Modo escuro";
+                modo=0;
+            }
+
+        }
+        function calcular(){
+            const n1 = parseFloat(document.getElementById("n1").value);
+            const n2 = parseFloat(document.getElementById("n2").value);
+            let media = (n1+n2)/2;
+            const resultado = document.getElementsByClassName("result");
+            resultado[0].innerHTML = "Media: "+media;  
+        }
+        function limpar(){
+            const caixa = document.getElementsByTagName("input");
+            console.log(caixa);
+            caixa[0].value = "";
+            caixa[1].value = "";
+            document.getElementsByClassName("result")[0].innerHTML = "media:"
+        }
+    </script>
+</body>
+</html>
